@@ -1,0 +1,23 @@
+{
+  "units": [
+    { "id": "greetings_and_introductions", "file": "greetings_and_introductions.json", "title": "Greetings & Introductions", "level": "A1" },
+    { "id": "numbers_and_time", "file": "numbers_and_time.json", "title": "Numbers & Time", "level": "A1" },
+    { "id": "food_and_drink", "file": "food_and_drink.json", "title": "Food & Drink", "level": "A1" },
+    { "id": "making_plans", "file": "making_plans.json", "title": "Making Plans & Invitations", "level": "A2" },
+    { "id": "talking_about_the_past", "file": "talking_about_the_past.json", "title": "Talking About the Past", "level": "A2" },
+    { "id": "travel_and_transport", "file": "travel_and_transport.json", "title": "Travel & Transport", "level": "A2" },
+    { "id": "daily_routine", "file": "daily_routine.json", "title": "Home & Daily Routine", "level": "A2" },
+    { "id": "health_and_body", "file": "health_and_body.json", "title": "Health & the Body", "level": "A2" },
+    { "id": "shopping_and_clothes", "file": "shopping_and_clothes.json", "title": "Shopping & Clothes", "level": "A2" },
+    { "id": "weather_and_seasons", "file": "weather_and_seasons.json", "title": "Weather & Seasons", "level": "A2" },
+    { "id": "emotions_and_feelings", "file": "emotions_and_feelings.json", "title": "Emotions & Feelings", "level": "A2" },
+    { "id": "work_and_school_life", "file": "work_and_school_life.json", "title": "Work & School Life", "level": "B1" },
+    { "id": "movies_and_entertainment", "file": "movies_and_entertainment.json", "title": "Movies, TV & Entertainment", "level": "B1" },
+    { "id": "giving_opinions", "file": "giving_opinions.json", "title": "Giving Opinions & Agreeing/Disagreeing", "level": "B1" },
+    { "id": "technology_and_internet", "file": "technology_and_internet.json", "title": "Technology & the Internet", "level": "B1" },
+    { "id": "relationships_and_social_plans", "file": "relationships_and_social_plans.json", "title": "Relationships & Social Plans", "level": "B1" },
+    { "id": "giving_advice", "file": "giving_advice.json", "title": "Giving Advice & Suggestions", "level": "B1" },
+    { "id": "hypotheticals", "file": "hypotheticals.json", "title": "Hypotheticals", "level": "B1" },
+    { "id": "describing_people", "file": "describing_people.json", "title": "Describing People & Personality", "level": "B1" }
+  ]
+}
