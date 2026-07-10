@@ -2,6 +2,11 @@
   "unit": "shopping_and_clothes",
   "title": "Shopping & Clothes",
   "level": "A2",
+  "grammarNotes": [
+    "'Quedar' shows up again here with yet another meaning: 'me queda grande/pequeño/perfecto' is about fit, not about arranging to meet (Making Plans) or remaining (its most literal sense) — one verb, three unrelated-sounding uses depending on context.",
+    "Demonstratives shift with distance: 'este' (this, near you), 'ese' (that, near the listener), 'aquel' (that, far from both) — Spanish distinguishes a middle distance English doesn't bother with.",
+    "'Probarse' is reflexive because you're trying something on yourself: 'me lo puedo probar?' — drop the 'se' and 'probar' just means 'to try' or 'to taste' something."
+  ],
   "words": [
     { "id": "shopping_and_clothes_w1", "es": "la talla", "en": "size (clothing)", "pos": "noun" },
     { "id": "shopping_and_clothes_w2", "es": "el precio", "en": "price", "pos": "noun" },

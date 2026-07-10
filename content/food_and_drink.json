@@ -2,6 +2,11 @@
   "unit": "food_and_drink",
   "title": "Food & Drink",
   "level": "A1",
+  "grammarNotes": [
+    "Spanish keeps the definite article even when talking about food in general: 'Me gusta el café' (I like coffee), not 'me gusta café' — dropping 'el' sounds foreign, unlike in English.",
+    "'Estoy lleno/llena' (I'm full) uses 'estar' because it's a temporary state, not a permanent trait — this is the same estar you'll see for moods and conditions throughout the app.",
+    "'Tengo hambre' and 'tengo sed' use 'tener' + noun, not 'estar' + adjective — Spanish treats hunger and thirst as things you 'have,' not states you 'are.'"
+  ],
   "words": [
     { "id": "food_and_drink_w1", "es": "el pan", "en": "bread", "pos": "noun" },
     { "id": "food_and_drink_w2", "es": "el agua", "en": "water", "pos": "noun" },

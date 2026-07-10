@@ -2,6 +2,11 @@
   "unit": "daily_routine",
   "title": "Home & Daily Routine",
   "level": "A2",
+  "grammarNotes": [
+    "Reflexive verbs like levantarse, ducharse, and acostarse describe actions you do to yourself — the pronoun (me, te, se, nos) has to match the subject: 'me levanto' (I get up) vs. 'se levanta' (he/she gets up).",
+    "Drop the reflexive pronoun and the meaning changes: 'levanto la mesa' means 'I lift the table,' not 'I get up.'",
+    "Estar + gerund ('está lavando la ropa') describes an action in progress right now, distinct from the plain present ('lava la ropa,' a routine habit)."
+  ],
   "words": [
     { "id": "daily_routine_w1", "es": "levantarse", "en": "to get up", "pos": "verb" },
     { "id": "daily_routine_w2", "es": "ducharse", "en": "to shower", "pos": "verb" },

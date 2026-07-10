@@ -2,6 +2,11 @@
   "unit": "technology_and_internet",
   "title": "Technology & the Internet",
   "level": "B1",
+  "grammarNotes": [
+    "'Es necesario que' and 'es importante que' behave like the desire/hope verbs from earlier B1 units — they force subjunctive in the following clause: 'es necesario que reinicie el equipo.'",
+    "Reflexive-looking 'se' often marks something happening to an object on its own, without a clear human doer: 'se me congeló la pantalla' (my screen froze on me) — the 'me' shows who was affected, not who caused it.",
+    "'Se me' constructions (se me olvidó, se me borró, se me cerró) are the standard way Spanish expresses accidental, no-one's-fault mishaps — literally 'it forgot/deleted/closed itself on me.'"
+  ],
   "words": [
     { "id": "technology_and_internet_w1", "es": "la contraseña", "en": "password", "pos": "noun" },
     { "id": "technology_and_internet_w2", "es": "el navegador", "en": "browser", "pos": "noun" },

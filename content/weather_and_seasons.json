@@ -2,6 +2,11 @@
   "unit": "weather_and_seasons",
   "title": "Weather & Seasons",
   "level": "A2",
+  "grammarNotes": [
+    "Most weather expressions use 'hacer,' treating weather as something the day 'makes': 'hace frío,' 'hace calor,' 'hace sol' — literally 'it makes cold/heat/sun.'",
+    "Rain and snow break that pattern and use 'estar' + gerund instead: 'está lloviendo,' 'está nevando' — because they're being described as an action happening, not a quality the day has.",
+    "Seasons take a definite article in Spanish where English often drops it: 'el otoño es mi estación favorita,' not just 'otoño es...'"
+  ],
   "words": [
     { "id": "weather_and_seasons_w1", "es": "el clima", "en": "climate / weather", "pos": "noun" },
     { "id": "weather_and_seasons_w2", "es": "la lluvia", "en": "rain", "pos": "noun" },

@@ -2,6 +2,11 @@
   "unit": "health_and_body",
   "title": "Health & the Body",
   "level": "A2",
+  "grammarNotes": [
+    "'Doler' works like 'gustar' — it agrees with the body part, not the person: 'me duele la cabeza' literally means 'the head is hurting to me,' so a plural body part takes a plural verb ('me duelen los pies').",
+    "Physical states use 'tener' + noun, the same pattern as hunger and thirst from the Food unit: 'tener fiebre,' 'tener tos' — not 'estar' + adjective.",
+    "'Estar resfriado/resfriada' agrees in gender with the speaker, just like 'bienvenido/bienvenida' back in the Greetings unit."
+  ],
   "words": [
     { "id": "health_and_body_w1", "es": "la cabeza", "en": "head", "pos": "noun" },
     { "id": "health_and_body_w2", "es": "el estómago", "en": "stomach", "pos": "noun" },

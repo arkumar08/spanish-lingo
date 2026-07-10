@@ -2,6 +2,11 @@
   "unit": "making_plans",
   "title": "Making Plans & Invitations",
   "level": "A2",
+  "grammarNotes": [
+    "'Ir a' + infinitive ('voy a quedarme,' 'vamos a cenar') is the everyday way to talk about near-future plans — much more common in speech than the future tense you may have seen in textbooks.",
+    "'Quedar' here means 'to arrange to meet' ('¿quedamos el viernes?'), a different sense from 'quedar' meaning 'to remain' or 'to fit' (you'll see that second sense in the Shopping unit) — context tells you which one is meant.",
+    "Declining an invitation politely almost always softens the 'no': 'lo siento, no puedo' or 'tal vez otro día' rather than a blunt refusal."
+  ],
   "words": [
     { "id": "making_plans_w1", "es": "el plan", "en": "plan", "pos": "noun" },
     { "id": "making_plans_w2", "es": "la cita", "en": "date / appointment", "pos": "noun" },

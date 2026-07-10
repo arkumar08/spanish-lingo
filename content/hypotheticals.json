@@ -2,6 +2,11 @@
   "unit": "hypotheticals",
   "title": "Hypotheticals",
   "level": "B1",
+  "grammarNotes": [
+    "For a real, plausible condition, Spanish stays simple: 'si' + present indicative + present or future — 'si tengo la oportunidad, la voy a aprovechar.' No subjunctive needed here.",
+    "The conditional simple (viajaría, compraría, elegiría) is what expresses the 'would' half of a hypothetical wish: 'yo viajaría por todo el mundo' — you'll see this same conditional form doing advice-softening work in the Giving Advice unit.",
+    "A few phrases here ('si fuera tú,' 'si tuviera más tiempo') use the imperfect subjunctive for a genuinely unreal condition — that's technically a step beyond this unit's core grammar (full si + imperfect subjunctive is usually a B2 topic), but these specific phrases are common enough as fixed patterns that it's worth recognizing them early, even before you can build new ones from scratch."
+  ],
   "words": [
     { "id": "hypotheticals_w1", "es": "si", "en": "if", "pos": "conjunction" },
     { "id": "hypotheticals_w2", "es": "imaginar", "en": "to imagine", "pos": "verb" },

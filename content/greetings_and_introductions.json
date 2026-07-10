@@ -2,6 +2,11 @@
   "unit": "greetings_and_introductions",
   "title": "Greetings & Introductions",
   "level": "A1",
+  "grammarNotes": [
+    "Spanish has two words for 'you': tú (informal, friends/peers) and usted (formal, strangers/elders/professional settings) — the verb conjugation changes with each, so picking one affects the whole sentence, not just the pronoun.",
+    "'Me llamo Ana' literally means 'I call myself Ana' — it's a reflexive construction, not a form of 'to be.' That's why you can't say 'soy llamado Ana.'",
+    "Words like 'bienvenido' agree in gender with the person being welcomed: 'bienvenido' for a man, 'bienvenida' for a woman."
+  ],
   "words": [
     { "id": "greetings_and_introductions_w1", "es": "hola", "en": "hello", "pos": "interjection" },
     { "id": "greetings_and_introductions_w2", "es": "adiós", "en": "goodbye", "pos": "interjection" },

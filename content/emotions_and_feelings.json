@@ -2,6 +2,11 @@
   "unit": "emotions_and_feelings",
   "title": "Emotions & Feelings",
   "level": "A2",
+  "grammarNotes": [
+    "Emotions almost always pair with 'estar,' not 'ser,' because moods are treated as temporary states: 'estoy triste' (I'm sad right now), never 'soy triste' — that would describe sadness as a permanent trait.",
+    "'Sentirse' + adjective ('me siento cansado') and 'estar' + adjective ('estoy cansado') are largely interchangeable — 'sentirse' just leans slightly more on the internal, felt experience.",
+    "'Tener miedo/ganas' follow the same 'tener + noun' pattern as hunger and physical states from earlier units, not 'estar' + adjective."
+  ],
   "words": [
     { "id": "emotions_and_feelings_w1", "es": "contento", "en": "happy / glad", "pos": "adjective" },
     { "id": "emotions_and_feelings_w2", "es": "triste", "en": "sad", "pos": "adjective" },

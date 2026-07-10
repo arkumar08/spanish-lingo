@@ -2,6 +2,11 @@
   "unit": "numbers_and_time",
   "title": "Numbers & Time",
   "level": "A1",
+  "grammarNotes": [
+    "Telling time uses 'ser,' but the number agrees: 'Es la una' (it's one o'clock, singular) versus 'Son las dos' (it's two o'clock, plural) — one o'clock is the only hour that takes the singular.",
+    "'De la mañana/tarde/noche' pins down which '7 o'clock' you mean, since Spanish doesn't default to a 12-hour AM/PM split the way English does.",
+    "Age uses 'tener,' not 'ser': 'Tengo veinte años' literally means 'I have twenty years,' not 'I am twenty.'"
+  ],
   "words": [
     { "id": "numbers_and_time_w1", "es": "uno", "en": "one", "pos": "number" },
     { "id": "numbers_and_time_w2", "es": "dos", "en": "two", "pos": "number" },

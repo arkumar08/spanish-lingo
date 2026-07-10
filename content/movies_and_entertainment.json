@@ -2,6 +2,11 @@
   "unit": "movies_and_entertainment",
   "title": "Movies, TV & Entertainment",
   "level": "B1",
+  "grammarNotes": [
+    "Gustar-type verbs (gustar, encantar, interesar, aburrir) flip the subject and object from English: 'me encantó esa serie' literally means 'that show delighted me,' not 'I loved that show' — the show is the grammatical subject, you're the indirect object.",
+    "Because of that flip, the verb agrees with the thing being liked, not the person: 'me interesa esa película' (singular film) but 'me interesan esas películas' (plural films).",
+    "'Recomendar' followed by 'que' pulls in the subjunctive, same pattern as 'espero que' from the Work unit: 'te recomiendo que la veas,' not 'que la ves.'"
+  ],
   "words": [
     { "id": "movies_and_entertainment_w1", "es": "la película", "en": "movie", "pos": "noun" },
     { "id": "movies_and_entertainment_w2", "es": "la serie", "en": "TV series", "pos": "noun" },

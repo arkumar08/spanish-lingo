@@ -2,6 +2,11 @@
   "unit": "talking_about_the_past",
   "title": "Talking About the Past",
   "level": "A2",
+  "grammarNotes": [
+    "Pretérito indefinido (fui, hice, tuve) narrates a finished action at a specific past point — 'ayer fui al cine.' Pretérito perfecto compuesto (he ido, he hecho) connects the past to now — 'todavía no he comido' (I still haven't eaten, relevant to right now).",
+    "A handy marker test: 'ayer,' 'anoche,' 'la semana pasada' usually pull the indefinido; 'hoy,' 'esta mañana,' 'todavía no' usually pull the perfecto compuesto.",
+    "Common irregular preterites don't follow the regular -ar/-er/-ir pattern at all: ir/ser both become 'fui, fuiste, fue...', hacer becomes 'hice,' tener becomes 'tuve' — worth memorizing as chunks rather than deriving them."
+  ],
   "words": [
     { "id": "talking_about_the_past_w1", "es": "ayer", "en": "yesterday", "pos": "adverb" },
     { "id": "talking_about_the_past_w2", "es": "anoche", "en": "last night", "pos": "adverb" },

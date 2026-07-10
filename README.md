@@ -26,9 +26,12 @@ js/
   data.js            Fetches + caches content JSON
   srs.js             Spaced repetition engine (5-box Leitner, localStorage)
   streak.js          Daily streak tracking (localStorage)
-  main.js            Nav/router, mounts the active view
-  modes/learn.js      Learn mode (flashcards)
-  modes/practice.js   Practice mode (multiple choice + fill-in-the-blank)
+  settings.js        User preferences (autoplay, last practice mode), localStorage
+  audio.js           Spanish text-to-speech (Web Speech API) + speaker button helpers
+  answerCheck.js     Lenient answer checking (case/accent-insensitive, edit-distance tolerant)
+  main.js            Nav/router, settings panel, mounts the active view
+  modes/learn.js      Learn mode (grammar notes -> flashcards -> dialogue)
+  modes/practice.js   Practice mode (multiple choice, fill-in-blank, production, listening)
   modes/progress.js   Progress view (streak, learned counts, per-unit mastery)
 index.html
 server.js            Zero-dependency static file server for local dev
@@ -43,6 +46,7 @@ Each unit file in `/content` follows:
   "unit": "food_and_drink",
   "title": "Food & Drink",
   "level": "A1",
+  "grammarNotes": ["2-4 short notes on the grammar 'why' behind this unit's patterns."],
   "words": [{ "id": "food_and_drink_w1", "es": "el pan", "en": "bread", "pos": "noun" }],
   "phrases": [{ "id": "food_and_drink_p1", "es": "quiero un café", "en": "I want a coffee" }],
   "sentences": [{ "id": "food_and_drink_s1", "es": "...", "en": "...", "register": "formal" }],
@@ -51,7 +55,8 @@ Each unit file in `/content` follows:
 ```
 
 Every word/phrase/sentence has a stable `id` (`<unit>_w1`, `_p1`, `_s1`, ...) — this is what
-the spaced repetition engine will key progress state on, so it's a required field for new units.
+the spaced repetition engine keys progress state on, so it's a required field for new units.
+`grammarNotes` is surfaced as a skippable expandable panel at the start of a unit in Learn mode.
 
 ## Deployment
 
@@ -66,6 +71,30 @@ moves a card up a box (longer interval before it's due again); answering incorre
 it to box 1 (due immediately). State lives in `localStorage` under `estudio.srs.v1`, keyed by
 card id, across all units combined — Practice mode's queue is just "every tracked card whose
 `due` date has passed," so it's automatically cross-unit.
+
+## Audio
+
+Spanish text-to-speech uses the browser's native `speechSynthesis` API — no key, no account,
+works offline once the page has loaded. `audio.js` picks the best available Spanish voice at
+runtime (prefers es-419/Latin American, falls back to es-ES, then any es-*) and caches the
+choice. If no Spanish voice is installed on the device, speaker buttons disable themselves with
+a tooltip explaining why, rather than failing silently or throwing — this path is exercised on
+every CI/test run here, since this dev machine only has English voices installed. Auto-play (one
+play per card, first time it's shown in Learn) is on by default and toggleable from the gear icon
+in the top bar; the toggle and the voice list are both loaded once at startup so the first speaker
+click isn't slow.
+
+## Practice modes
+
+Practice offers a mode picker each session — Multiple Choice, Production, Listening, or Mixed —
+all pulling from the *same* due-cards SRS queue, so switching modes never creates a second
+competing review system. Production shows the English and asks for typed Spanish from scratch;
+Listening plays audio only (no Spanish text) and asks for typed Spanish, then reveals both Spanish
+and English. Both use `answerCheck.js`: case-insensitive, accent-insensitive, and tolerant of a
+1-2 character edit distance, so "como estas" correctly matches "¿Cómo estás?". A typed answer
+outside that tolerance shows the correct (accented) form and asks the user to self-grade — "I
+basically had it" counts as correct for SRS purposes, "I didn't know this" resets the card to
+box 1 — so a near-miss doesn't get penalized as hard as a total blank.
 
 ## Content sourcing
 
@@ -115,19 +144,28 @@ sentences are original, not copied.
   - **B1** — Work & School Life, Movies/TV & Entertainment, Giving Opinions &
     Agreeing/Disagreeing, Technology & the Internet, Relationships & Social Plans,
     Giving Advice & Suggestions, Hypotheticals, Describing People & Personality
-- [x] Learn mode
+- [x] Learn mode (with grammar-notes primer + speaker audio)
 - [x] Spaced repetition engine
-- [x] Practice mode
+- [x] Practice mode (multiple choice, fill-in-blank, production, listening)
 - [x] Progress view
-- [ ] Conversation mode (Claude API)
+- [x] Audio (Web Speech API, graceful fallback when no Spanish voice is installed)
+- [x] Grammar notes (all 19 units)
+- [ ] Conversation mode (Claude API) — deliberately deferred this session
 
 ## Scale notes (19 units / 893 cards, ~176KB content)
 
-Verified via a full Playwright pass: cold load to a rendered unit picker ~550ms; `loadCardIndex()`
-(fetches and flattens all 19 unit files) resolves in ~50ms once cached; a 96-card cross-unit
-Practice queue built from 6 units ran with no errors; `localStorage` sits at ~33KB for 282 tracked
-cards (roughly 117 bytes/card), so a fully-reviewed 19-unit deck (~900 cards) would land around
+Verified via a full Playwright pass across Chromium desktop, Chromium mobile viewport, and
+WebKit: cold load to a rendered unit picker ~550ms; `loadCardIndex()` (fetches and flattens all
+19 unit files) resolves in ~50ms once cached; a 96-card cross-unit Practice queue built from 6
+units ran with no errors; all four Practice question types (choice, fill-in-blank, production,
+listening) appeared correctly in a Mixed session on every engine tested. `localStorage` sits at
+~27KB for 235 tracked cards (~114 bytes/card — unchanged by adding production/listening, since
+both route through the same `recordResult()` call as everything else); settings + streak add a
+negligible ~100 bytes combined. A fully-reviewed 19-unit library (~900 cards) projects to roughly
 ~100KB — trivial against the ~5–10MB browser quota. Nothing here strains the current architecture.
-The one soft observation: the Learn unit picker is now a single flat grid seven rows tall with no
-grouping or search — fine at 19 units, but if content keeps growing at this rate, collapsing by
-CEFR level (A1/A2/B1 sections) or adding a level filter would keep it scannable. Not urgent yet.
+
+Two soft, non-urgent observations: (1) the Learn unit picker is a flat grid seven rows tall with
+no grouping — fine now, but a CEFR-level filter would help past ~30 units; (2) this dev/CI
+environment has no Spanish TTS voice installed, so the "no voice available" fallback path was
+exercised thoroughly but actual Spanish audio *output* on real devices (especially mobile Safari's
+stricter autoplay/gesture rules) hasn't been verified — worth a real-device spot-check.

@@ -2,6 +2,11 @@
   "unit": "work_and_school_life",
   "title": "Work & School Life",
   "level": "B1",
+  "grammarNotes": [
+    "This is your first real dose of the subjunctive: phrases expressing desire, need, or hope about someone else's action pull the following verb into the subjunctive — 'espero que me contraten,' 'es importante que llegues puntual.'",
+    "The trigger isn't the emotion itself, it's the structure: a change of subject across 'que.' 'Espero contratar' (I hope to hire, same subject) stays infinitive; 'espero que me contraten' (I hope they hire me, different subject) needs subjunctive.",
+    "'Ojalá' always takes the subjunctive, no exceptions — it's borrowed from Arabic 'law šā' allāh' (if God wills), so it inherently carries that note of uncertain hope."
+  ],
   "words": [
     { "id": "work_and_school_life_w1", "es": "la entrevista", "en": "interview", "pos": "noun" },
     { "id": "work_and_school_life_w2", "es": "el currículum", "en": "résumé / CV", "pos": "noun" },

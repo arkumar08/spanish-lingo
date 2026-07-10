@@ -1,8 +1,10 @@
-// Learn mode: flashcard review through a unit's words -> phrases -> sentences,
-// followed by a short dialogue read-through.
+// Learn mode: optional grammar-notes primer, then flashcard review through a
+// unit's words -> phrases -> sentences, followed by a short dialogue read-through.
 
 import { loadUnitsIndex, loadUnit } from "../data.js";
 import { recordResult } from "../srs.js";
+import { speak, speakerButtonHTML, wireSpeakerButton } from "../audio.js";
+import { getSettings } from "../settings.js";
 
 function buildDeck(unit) {
   const words = unit.words.map((w) => ({ kind: "word", ...w }));
@@ -52,16 +54,49 @@ async function startSession(container, unitId) {
     index: 0,
     revealed: false,
     results: { gotIt: 0, stillLearning: 0 },
-    phase: "cards", // "cards" | "dialogue" | "complete"
+    phase: unit.grammarNotes?.length ? "notes" : "cards", // "notes" | "cards" | "dialogue" | "complete"
   };
 
   renderSession(container, state);
 }
 
 function renderSession(container, state) {
+  if (state.phase === "notes") return renderGrammarNotes(container, state);
   if (state.phase === "complete") return renderComplete(container, state);
   if (state.phase === "dialogue") return renderDialogue(container, state);
   return renderCard(container, state);
+}
+
+function renderGrammarNotes(container, state) {
+  container.innerHTML = `
+    <button class="back-link" id="exit-btn">&larr; Back to units</button>
+    <div class="grammar-notes">
+      <div class="grammar-notes__header" id="notes-header">
+        <h2 class="grammar-notes__title">Before you start: ${state.unit.title}</h2>
+        <button class="grammar-notes__toggle" id="notes-toggle" type="button">Hide</button>
+      </div>
+      <ul class="grammar-notes__list" id="notes-list">
+        ${state.unit.grammarNotes.map((note) => `<li>${note}</li>`).join("")}
+      </ul>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn--primary" id="start-btn">Start reviewing</button>
+    </div>
+  `;
+
+  container.querySelector("#exit-btn").addEventListener("click", () => renderLearn(container));
+  container.querySelector("#start-btn").addEventListener("click", () => {
+    state.phase = "cards";
+    renderSession(container, state);
+  });
+
+  const list = container.querySelector("#notes-list");
+  const toggle = container.querySelector("#notes-toggle");
+  toggle.addEventListener("click", () => {
+    const hidden = list.style.display === "none";
+    list.style.display = hidden ? "flex" : "none";
+    toggle.textContent = hidden ? "Hide" : "Show";
+  });
 }
 
 function renderCard(container, state) {
@@ -81,7 +116,10 @@ function renderCard(container, state) {
     <div class="flashcard" id="flashcard">
       ${card.pos ? `<span class="flashcard__pos">${card.pos}</span>` : ""}
       ${card.register ? `<span class="flashcard__register">${card.register}</span>` : ""}
-      <div class="flashcard__es">${card.es}</div>
+      <div class="flashcard__head">
+        <div class="flashcard__es">${card.es}</div>
+        ${speakerButtonHTML("card")}
+      </div>
       ${state.revealed ? `<div class="flashcard__en">${card.en}</div>` : `<div class="flashcard__hint">Tap to reveal</div>`}
     </div>
 
@@ -92,12 +130,19 @@ function renderCard(container, state) {
   `;
 
   container.querySelector("#exit-btn").addEventListener("click", () => renderLearn(container));
-  container.querySelector("#flashcard").addEventListener("click", () => {
+  container.querySelector("#flashcard").addEventListener("click", (e) => {
+    if (e.target.closest(".speaker-btn")) return; // don't flip when tapping the speaker icon
     state.revealed = !state.revealed;
     renderCard(container, state);
   });
   container.querySelector("#still-btn").addEventListener("click", () => advance(container, state, false));
   container.querySelector("#gotit-btn").addEventListener("click", () => advance(container, state, true));
+
+  wireSpeakerButton(container, "card", card.es);
+  if (state.lastAutoPlayedIndex !== state.index) {
+    state.lastAutoPlayedIndex = state.index;
+    if (getSettings().autoPlayAudio) speak(card.es);
+  }
 }
 
 function advance(container, state, gotIt) {
@@ -117,10 +162,15 @@ function advance(container, state, gotIt) {
 function renderDialogue(container, state) {
   const lines = state.unit.dialogue
     .map(
-      (line) => `
-      <div class="flashcard__dialogue-speaker">${line.speaker}</div>
-      <div class="flashcard__es" style="font-size:1.15rem; margin-bottom:2px;">${line.es}</div>
-      <div class="flashcard__en" style="font-size:0.95rem; margin:0 0 20px;">${line.en}</div>
+      (line, i) => `
+      <div class="flashcard__dialogue-line">
+        ${speakerButtonHTML(`line${i}`)}
+        <div>
+          <div class="flashcard__dialogue-speaker">${line.speaker}</div>
+          <div class="flashcard__es" style="font-size:1.15rem; margin-bottom:2px;">${line.es}</div>
+          <div class="flashcard__en" style="font-size:0.95rem; margin:0;">${line.en}</div>
+        </div>
+      </div>
     `
     )
     .join("");
@@ -141,6 +191,8 @@ function renderDialogue(container, state) {
     state.phase = "complete";
     renderSession(container, state);
   });
+
+  state.unit.dialogue.forEach((line, i) => wireSpeakerButton(container, `line${i}`, line.es));
 }
 
 function renderComplete(container, state) {

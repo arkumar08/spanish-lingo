@@ -2,6 +2,11 @@
   "unit": "giving_advice",
   "title": "Giving Advice & Suggestions",
   "level": "B1",
+  "grammarNotes": [
+    "'Debería' is the conditional form of 'deber' — using the conditional instead of the plain present ('debes') softens a piece of advice from an obligation into a suggestion, much like 'should' versus 'must' in English.",
+    "'Yo que tú' and 'yo en tu lugar' (if I were you / in your place) are fixed idioms that use the conditional in the main clause but don't require any subjunctive — despite sounding hypothetical, they're set phrases, not full si-clauses.",
+    "'Sugerir/recomendar que' pull the subjunctive just like 'espero que' — 'te sugiero que lo pienses,' not 'que lo piensas' — the same subordinate-clause pattern from the Work and Movies units."
+  ],
   "words": [
     { "id": "giving_advice_w1", "es": "aconsejar", "en": "to advise", "pos": "verb" },
     { "id": "giving_advice_w2", "es": "sugerir", "en": "to suggest", "pos": "verb" },

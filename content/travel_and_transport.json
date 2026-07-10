@@ -2,6 +2,11 @@
   "unit": "travel_and_transport",
   "title": "Travel & Transport",
   "level": "A2",
+  "grammarNotes": [
+    "Direct object pronouns (lo, la, los, las) replace the thing being acted on and jump in front of a conjugated verb: 'facturamos el equipaje' becomes 'lo facturamos.'",
+    "'Ir a' + infinitive covers travel plans just like it does social plans: 'vamos a alquilar un carro' — the same near-future pattern from the Making Plans unit, just applied to a new topic.",
+    "'Perder' means both 'to lose' and 'to miss' (a train/flight) — 'perdí el tren' is 'I missed the train,' not 'I lost the train.'"
+  ],
   "words": [
     { "id": "travel_and_transport_w1", "es": "el viaje", "en": "trip", "pos": "noun" },
     { "id": "travel_and_transport_w2", "es": "el vuelo", "en": "flight", "pos": "noun" },

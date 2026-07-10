@@ -2,6 +2,11 @@
   "unit": "giving_opinions",
   "title": "Giving Opinions & Agreeing/Disagreeing",
   "level": "B1",
+  "grammarNotes": [
+    "'Creo que' and 'pienso que' take the indicative when affirmative ('creo que tienes razón') but flip to subjunctive when negated: 'no creo que sea tan sencillo' — negating the opinion verb casts doubt on the whole clause.",
+    "'Dudar que' works the same way as a negated opinion verb: doubt always triggers subjunctive, even though 'dudar' itself is a plain, non-negated verb — the doubt is baked into its meaning.",
+    "'Es posible que' and similar impersonal expressions of possibility take subjunctive by default, unlike 'es verdad que' or 'es cierto que,' which state something as fact and keep the indicative."
+  ],
   "words": [
     { "id": "giving_opinions_w1", "es": "la opinión", "en": "opinion", "pos": "noun" },
     { "id": "giving_opinions_w2", "es": "opinar", "en": "to think / opine", "pos": "verb" },

@@ -2,6 +2,11 @@
   "unit": "relationships_and_social_plans",
   "title": "Relationships & Social Plans",
   "level": "B1",
+  "grammarNotes": [
+    "The plural reflexive pronoun 'se' (or 'nos' for 'we') doubles as a reciprocal marker: 'se conocieron' means 'they met each other,' and 'nos llevamos bien' means 'we get along with each other' — the action bounces between the people involved.",
+    "'Espero que' and 'ojalá' both pull the subjunctive here just as in the Work unit — 'espero que se lleven bien,' 'ojalá se reconcilien pronto' — the pattern repeats because hoping about someone else's actions always triggers it.",
+    "'Llevarse bien/mal' is a fixed idiom (to get along well/poorly) — don't try to translate it word-for-word as 'to carry oneself well.'"
+  ],
   "words": [
     { "id": "relationships_and_social_plans_w1", "es": "la pareja", "en": "partner / couple", "pos": "noun" },
     { "id": "relationships_and_social_plans_w2", "es": "el matrimonio", "en": "marriage", "pos": "noun" },

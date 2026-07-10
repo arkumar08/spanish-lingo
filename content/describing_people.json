@@ -2,6 +2,11 @@
   "unit": "describing_people",
   "title": "Describing People & Personality",
   "level": "B1",
+  "grammarNotes": [
+    "Ser describes inherent traits ('es terco,' he's [inherently] stubborn); estar describes a temporary state ('está de mal humor,' he's in a bad mood right now) — the same core ser/estar split from the Emotions unit, now applied to personality versus mood.",
+    "Comparatives follow two patterns: 'más/menos + adjective + que' for inequality ('es más paciente que yo') and 'tan + adjective + como' for equality ('es tan generoso como su hermana').",
+    "Superlatives drop the second 'que' comparison and add a definite article: 'es la persona más optimista que conozco' — 'the most,' not just 'more than.'"
+  ],
   "words": [
     { "id": "describing_people_w1", "es": "el carácter", "en": "character / personality", "pos": "noun" },
     { "id": "describing_people_w2", "es": "sincero", "en": "sincere", "pos": "adjective" },
